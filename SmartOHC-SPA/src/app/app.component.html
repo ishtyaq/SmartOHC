@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <h4>Service Log</h4>
+    </div>
+    <div class="row">
+      <div class="col col-md-6">
+        <span>
+          <p>Log Monitoring</p>
+      </span>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table">
+      <thead class="thead-dark">
+        <tr class="table-primary">
+          <th scope="col">Client Code</th>
+          <th scope="col">Service Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Status</th>
+          <th scope="col">Created By</th>
+          <th scope="col">Log Date</th>
+        </tr>
+      </thead>
+        <tbody *ngIf="signalList">
+          <tr *ngFor="let signal of signalList">
+            <td>{{ signal.clientCode }}</td>
+            <td>{{ signal.serviceName }}</td>
+            <td>{{ signal.description }}</td>
+            <td>{{ signal.status }}</td>
+            <td>{{ signal.createdBy }}</td>
+            <td>{{ signal.createdDate }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+
+
+<router-outlet></router-outlet>
